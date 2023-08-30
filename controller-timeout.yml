@@ -1,0 +1,21 @@
+---
+- name: Set request timeout on controller
+  hosts: aap
+  connection: local
+  gather_facts: false
+
+  tasks:
+      - name: Set Request Timeout Project Update
+        awx.awx.project_update:
+          project: "hello"
+          request_timeout: 30 
+
+      - name: Set Request Timeout Project
+        awx.awx.project:
+          name: "hello"
+          request_timeout: 40
+          state: present
+          
+          
+        
+        

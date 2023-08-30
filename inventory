@@ -1,2 +1,2 @@
 [aap]
-192.168.67.20 username=admin password=Ansible123
+192.168.67.20 username=admin password=Ansible123 oauth_token=ILTjSbTfkzbnDOITJQvpwTeJH0Ur9y
