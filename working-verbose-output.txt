@@ -1,0 +1,223 @@
+joonpaik@MacBook-Pro controller-demo % ansible-playbook controller-timeout.yml -vvv
+ansible-playbook 2.9.20
+  config file = /Users/joonpaik/git/controller-demo/ansible.cfg
+  configured module search path = ['/Users/joonpaik/.ansible/plugins/modules', '/usr/share/ansible/plugins/modules']
+  ansible python module location = /Users/joonpaik/.pyenv/versions/3.8.2/lib/python3.8/site-packages/ansible
+  executable location = /Users/joonpaik/.pyenv/versions/3.8.2/bin/ansible-playbook
+  python version = 3.8.2 (default, May  9 2020, 17:03:03) [Clang 11.0.3 (clang-1103.0.32.59)]
+Using /Users/joonpaik/git/controller-demo/ansible.cfg as config file
+host_list declined parsing /Users/joonpaik/git/controller-demo/inventory as it did not pass its verify_file() method
+script declined parsing /Users/joonpaik/git/controller-demo/inventory as it did not pass its verify_file() method
+auto declined parsing /Users/joonpaik/git/controller-demo/inventory as it did not pass its verify_file() method
+Parsed /Users/joonpaik/git/controller-demo/inventory inventory source with ini plugin
+Skipping callback 'actionable', as we already have a stdout callback.
+Skipping callback 'counter_enabled', as we already have a stdout callback.
+Skipping callback 'debug', as we already have a stdout callback.
+Skipping callback 'dense', as we already have a stdout callback.
+Skipping callback 'dense', as we already have a stdout callback.
+Skipping callback 'full_skip', as we already have a stdout callback.
+Skipping callback 'json', as we already have a stdout callback.
+Skipping callback 'minimal', as we already have a stdout callback.
+Skipping callback 'null', as we already have a stdout callback.
+Skipping callback 'oneline', as we already have a stdout callback.
+Skipping callback 'selective', as we already have a stdout callback.
+Skipping callback 'skippy', as we already have a stdout callback.
+Skipping callback 'stderr', as we already have a stdout callback.
+Skipping callback 'unixy', as we already have a stdout callback.
+Skipping callback 'yaml', as we already have a stdout callback.
+
+PLAYBOOK: controller-timeout.yml *************************************************************************************
+1 plays in controller-timeout.yml
+
+PLAY [Set request timeout on controller] *****************************************************************************
+META: ran handlers
+
+TASK [Set Request Timeout] *******************************************************************************************
+task path: /Users/joonpaik/git/controller-demo/controller-timeout.yml:8
+<192.168.67.20> ESTABLISH LOCAL CONNECTION FOR USER: joonpaik
+<192.168.67.20> EXEC /bin/sh -c 'echo ~joonpaik && sleep 0'
+<192.168.67.20> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /Users/joonpaik/.ansible/tmp `"&& mkdir "` echo /Users/joonpaik/.ansible/tmp/ansible-tmp-1693422050.387037-54373-105588265502788 `" && echo ansible-tmp-1693422050.387037-54373-105588265502788="` echo /Users/joonpaik/.ansible/tmp/ansible-tmp-1693422050.387037-54373-105588265502788 `" ) && sleep 0'
+<192.168.67.20> Attempting python interpreter discovery
+<192.168.67.20> EXEC /bin/sh -c 'echo PLATFORM; uname; echo FOUND; command -v '"'"'/usr/bin/python'"'"'; command -v '"'"'python3.7'"'"'; command -v '"'"'python3.6'"'"'; command -v '"'"'python3.5'"'"'; command -v '"'"'python2.7'"'"'; command -v '"'"'python2.6'"'"'; command -v '"'"'/usr/libexec/platform-python'"'"'; command -v '"'"'/usr/bin/python3'"'"'; command -v '"'"'python'"'"'; echo ENDFOUND && sleep 0'
+<192.168.67.20> Python interpreter discovery fallback (unsupported platform for extended discovery: darwin)
+Using module file /Users/joonpaik/git/controller-demo/collections/ansible_collections/awx/awx/plugins/modules/project_update.py
+<192.168.67.20> PUT /Users/joonpaik/.ansible/tmp/ansible-local-54344kzmdkq5b/tmp8n1oy0wt TO /Users/joonpaik/.ansible/tmp/ansible-tmp-1693422050.387037-54373-105588265502788/AnsiballZ_project_update.py
+<192.168.67.20> EXEC /bin/sh -c 'chmod u+x /Users/joonpaik/.ansible/tmp/ansible-tmp-1693422050.387037-54373-105588265502788/ /Users/joonpaik/.ansible/tmp/ansible-tmp-1693422050.387037-54373-105588265502788/AnsiballZ_project_update.py && sleep 0'
+<192.168.67.20> EXEC /bin/sh -c '/usr/local/bin/python3.7 /Users/joonpaik/.ansible/tmp/ansible-tmp-1693422050.387037-54373-105588265502788/AnsiballZ_project_update.py && sleep 0'
+<192.168.67.20> EXEC /bin/sh -c 'rm -f -r /Users/joonpaik/.ansible/tmp/ansible-tmp-1693422050.387037-54373-105588265502788/ > /dev/null 2>&1 && sleep 0'
+[WARNING]: You are using the awx version of this collection but connecting to Red Hat Ansible Automation Platform
+[WARNING]: Platform darwin on host 192.168.67.20 is using the discovered Python interpreter at
+/usr/local/bin/python3.7, but future installation of another Python interpreter could change this. See
+https://docs.ansible.com/ansible/2.9/reference_appendices/interpreter_discovery.html for more information.
+ok: [192.168.67.20] => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/local/bin/python3.7"
+    },
+    "changed": false,
+    "elapsed": 54.837,
+    "finished": "2023-08-30T19:01:49.274083Z",
+    "id": 1170,
+    "invocation": {
+        "module_args": {
+            "controller_config_file": null,
+            "controller_host": "https://192.168.67.20",
+            "controller_oauthtoken": "",
+            "controller_password": "VALUE_SPECIFIED_IN_NO_LOG_PARAMETER",
+            "controller_username": "admin",
+            "interval": 2.0,
+            "name": "hello",
+            "organization": null,
+            "project": "hello",
+            "request_timeout": 30.0,
+            "timeout": null,
+            "validate_certs": null,
+            "wait": true
+        }
+    },
+    "started": "2023-08-30T19:00:54.437554Z",
+    "status": "successful"
+}
+META: ran handlers
+META: ran handlers
+
+PLAY RECAP ***********************************************************************************************************
+192.168.67.20              : ok=1    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+joonpaik@MacBook-Pro controller-demo % ansible-playbook controller-timeout.yml -vvv
+ansible-playbook 2.9.20
+  config file = /Users/joonpaik/git/controller-demo/ansible.cfg
+  configured module search path = ['/Users/joonpaik/.ansible/plugins/modules', '/usr/share/ansible/plugins/modules']
+  ansible python module location = /Users/joonpaik/.pyenv/versions/3.8.2/lib/python3.8/site-packages/ansible
+  executable location = /Users/joonpaik/.pyenv/versions/3.8.2/bin/ansible-playbook
+  python version = 3.8.2 (default, May  9 2020, 17:03:03) [Clang 11.0.3 (clang-1103.0.32.59)]
+Using /Users/joonpaik/git/controller-demo/ansible.cfg as config file
+host_list declined parsing /Users/joonpaik/git/controller-demo/inventory as it did not pass its verify_file() method
+script declined parsing /Users/joonpaik/git/controller-demo/inventory as it did not pass its verify_file() method
+auto declined parsing /Users/joonpaik/git/controller-demo/inventory as it did not pass its verify_file() method
+Parsed /Users/joonpaik/git/controller-demo/inventory inventory source with ini plugin
+Skipping callback 'actionable', as we already have a stdout callback.
+Skipping callback 'counter_enabled', as we already have a stdout callback.
+Skipping callback 'debug', as we already have a stdout callback.
+Skipping callback 'dense', as we already have a stdout callback.
+Skipping callback 'dense', as we already have a stdout callback.
+Skipping callback 'full_skip', as we already have a stdout callback.
+Skipping callback 'json', as we already have a stdout callback.
+Skipping callback 'minimal', as we already have a stdout callback.
+Skipping callback 'null', as we already have a stdout callback.
+Skipping callback 'oneline', as we already have a stdout callback.
+Skipping callback 'selective', as we already have a stdout callback.
+Skipping callback 'skippy', as we already have a stdout callback.
+Skipping callback 'stderr', as we already have a stdout callback.
+Skipping callback 'unixy', as we already have a stdout callback.
+Skipping callback 'yaml', as we already have a stdout callback.
+
+PLAYBOOK: controller-timeout.yml *************************************************************************************
+1 plays in controller-timeout.yml
+
+PLAY [Set request timeout on controller] *****************************************************************************
+META: ran handlers
+
+TASK [Set Request Timeout Project Update] ****************************************************************************
+task path: /Users/joonpaik/git/controller-demo/controller-timeout.yml:8
+<192.168.67.20> ESTABLISH LOCAL CONNECTION FOR USER: joonpaik
+<192.168.67.20> EXEC /bin/sh -c 'echo ~joonpaik && sleep 0'
+<192.168.67.20> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /Users/joonpaik/.ansible/tmp `"&& mkdir "` echo /Users/joonpaik/.ansible/tmp/ansible-tmp-1693422596.121333-54777-119676848363872 `" && echo ansible-tmp-1693422596.121333-54777-119676848363872="` echo /Users/joonpaik/.ansible/tmp/ansible-tmp-1693422596.121333-54777-119676848363872 `" ) && sleep 0'
+<192.168.67.20> Attempting python interpreter discovery
+<192.168.67.20> EXEC /bin/sh -c 'echo PLATFORM; uname; echo FOUND; command -v '"'"'/usr/bin/python'"'"'; command -v '"'"'python3.7'"'"'; command -v '"'"'python3.6'"'"'; command -v '"'"'python3.5'"'"'; command -v '"'"'python2.7'"'"'; command -v '"'"'python2.6'"'"'; command -v '"'"'/usr/libexec/platform-python'"'"'; command -v '"'"'/usr/bin/python3'"'"'; command -v '"'"'python'"'"'; echo ENDFOUND && sleep 0'
+<192.168.67.20> Python interpreter discovery fallback (unsupported platform for extended discovery: darwin)
+Using module file /Users/joonpaik/git/controller-demo/collections/ansible_collections/awx/awx/plugins/modules/project_update.py
+<192.168.67.20> PUT /Users/joonpaik/.ansible/tmp/ansible-local-54748oahn9jpr/tmpp7l93rnv TO /Users/joonpaik/.ansible/tmp/ansible-tmp-1693422596.121333-54777-119676848363872/AnsiballZ_project_update.py
+<192.168.67.20> EXEC /bin/sh -c 'chmod u+x /Users/joonpaik/.ansible/tmp/ansible-tmp-1693422596.121333-54777-119676848363872/ /Users/joonpaik/.ansible/tmp/ansible-tmp-1693422596.121333-54777-119676848363872/AnsiballZ_project_update.py && sleep 0'
+<192.168.67.20> EXEC /bin/sh -c '/usr/local/bin/python3.7 /Users/joonpaik/.ansible/tmp/ansible-tmp-1693422596.121333-54777-119676848363872/AnsiballZ_project_update.py && sleep 0'
+<192.168.67.20> EXEC /bin/sh -c 'rm -f -r /Users/joonpaik/.ansible/tmp/ansible-tmp-1693422596.121333-54777-119676848363872/ > /dev/null 2>&1 && sleep 0'
+[WARNING]: You are using the awx version of this collection but connecting to Red Hat Ansible Automation Platform
+[WARNING]: Platform darwin on host 192.168.67.20 is using the discovered Python interpreter at
+/usr/local/bin/python3.7, but future installation of another Python interpreter could change this. See
+https://docs.ansible.com/ansible/2.9/reference_appendices/interpreter_discovery.html for more information.
+ok: [192.168.67.20] => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/local/bin/python3.7"
+    },
+    "changed": false,
+    "elapsed": 80.425,
+    "finished": "2023-08-30T19:11:22.175939Z",
+    "id": 1171,
+    "invocation": {
+        "module_args": {
+            "controller_config_file": null,
+            "controller_host": "https://192.168.67.20",
+            "controller_oauthtoken": "",
+            "controller_password": "VALUE_SPECIFIED_IN_NO_LOG_PARAMETER",
+            "controller_username": "admin",
+            "interval": 2.0,
+            "name": "hello",
+            "organization": null,
+            "project": "hello",
+            "request_timeout": 30.0,
+            "timeout": null,
+            "validate_certs": null,
+            "wait": true
+        }
+    },
+    "started": "2023-08-30T19:10:01.750466Z",
+    "status": "successful"
+}
+
+TASK [Set Request Timeout Project] ***********************************************************************************
+task path: /Users/joonpaik/git/controller-demo/controller-timeout.yml:13
+<192.168.67.20> ESTABLISH LOCAL CONNECTION FOR USER: joonpaik
+<192.168.67.20> EXEC /bin/sh -c 'echo ~joonpaik && sleep 0'
+<192.168.67.20> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /Users/joonpaik/.ansible/tmp `"&& mkdir "` echo /Users/joonpaik/.ansible/tmp/ansible-tmp-1693422685.352341-54832-88695792939793 `" && echo ansible-tmp-1693422685.352341-54832-88695792939793="` echo /Users/joonpaik/.ansible/tmp/ansible-tmp-1693422685.352341-54832-88695792939793 `" ) && sleep 0'
+Using module file /Users/joonpaik/git/controller-demo/collections/ansible_collections/awx/awx/plugins/modules/project.py
+<192.168.67.20> PUT /Users/joonpaik/.ansible/tmp/ansible-local-54748oahn9jpr/tmpqftxspfp TO /Users/joonpaik/.ansible/tmp/ansible-tmp-1693422685.352341-54832-88695792939793/AnsiballZ_project.py
+<192.168.67.20> EXEC /bin/sh -c 'chmod u+x /Users/joonpaik/.ansible/tmp/ansible-tmp-1693422685.352341-54832-88695792939793/ /Users/joonpaik/.ansible/tmp/ansible-tmp-1693422685.352341-54832-88695792939793/AnsiballZ_project.py && sleep 0'
+<192.168.67.20> EXEC /bin/sh -c '/usr/local/bin/python3.7 /Users/joonpaik/.ansible/tmp/ansible-tmp-1693422685.352341-54832-88695792939793/AnsiballZ_project.py && sleep 0'
+<192.168.67.20> EXEC /bin/sh -c 'rm -f -r /Users/joonpaik/.ansible/tmp/ansible-tmp-1693422685.352341-54832-88695792939793/ > /dev/null 2>&1 && sleep 0'
+ok: [192.168.67.20] => {
+    "changed": false,
+    "id": 84,
+    "invocation": {
+        "module_args": {
+            "allow_override": null,
+            "controller_config_file": null,
+            "controller_host": "https://192.168.67.20",
+            "controller_oauthtoken": "",
+            "controller_password": "VALUE_SPECIFIED_IN_NO_LOG_PARAMETER",
+            "controller_username": "admin",
+            "copy_from": null,
+            "credential": null,
+            "custom_virtualenv": null,
+            "default_environment": null,
+            "description": null,
+            "interval": 2.0,
+            "local_path": null,
+            "name": "hello",
+            "new_name": null,
+            "notification_templates_error": null,
+            "notification_templates_started": null,
+            "notification_templates_success": null,
+            "organization": null,
+            "request_timeout": 40.0,
+            "scm_branch": null,
+            "scm_clean": null,
+            "scm_delete_on_update": null,
+            "scm_refspec": null,
+            "scm_track_submodules": null,
+            "scm_type": null,
+            "scm_update_cache_timeout": null,
+            "scm_update_on_launch": null,
+            "scm_url": null,
+            "signature_validation_credential": null,
+            "state": "present",
+            "timeout": null,
+            "update_project": false,
+            "validate_certs": null,
+            "wait": true
+        }
+    }
+}
+META: ran handlers
+META: ran handlers
+
+PLAY RECAP ***********************************************************************************************************
+192.168.67.20              : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0  
